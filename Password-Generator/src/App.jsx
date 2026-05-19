@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect , useRef} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -41,7 +41,12 @@ function App() {
 
   },[length, smallCharAllowed , numsAllowed, bigCharAllowed, spCharAllowed, setPassword])
 
+  const passwordRef = useRef(null);
 
+  const copyToClipboard = () => {
+    window.navigator.clipboard.writeText(password)
+    passwordRef.current?.select();
+  }
 
   useEffect(() => {
     passwordGenerator()
@@ -50,36 +55,45 @@ function App() {
   return (
     <>
     <div>
-    <h1 className='bg-black text-white font-bold font-serif p-5 text-center rounded-3xl'>Password Generator</h1>
+    <h1 className='bg-blue-950 text-white font-bold font-serif p-5 text-center rounded-3xl'>Password Generator</h1>
 
     <div>
       
-      <input type='text' className='p-2 outline-none bg-white text-black m-2 rounded-xl font-bold text-xl' placeholder = "Generated Password" value={password}>
+      <input 
+        type='text' 
+        className='p-2 outline-none bg-white text-black m-2 rounded-xl  font-bold text-xl' 
+        placeholder = "Generated Password" 
+        value={password}
+        ref={passwordRef}>
       </input>
 
-      <button className='bg-amber-700 text-white p-2 rounded-xl m-2 font-bold text-xl'>
+      {/* Copy Button */}
+      <button className='bg-amber-700 text-white p-2 rounded-xl m-2 font-bold text-xl' onClick={copyToClipboard}>
         <label htmlFor="Copy">Copy</label>
       </button>
 
-      <button className='bg-blue-500 text-white p-2 rounded-3xl font-bold text-xl' onClick={passwordGenerator}>
+      {/* Generate Button */}
+      <button className='bg-blue-500 text-white p-2 rounded-3xl font-bold text-xl m-2' onClick={passwordGenerator}>
         <label htmlFor="Generate">Generate New</label>
       </button>
 
       <br />
 
+      {/*Range Slider*/}
       <input 
       type="range" 
-      className="w-50 cursor-pointer " 
+      className="w-50 cursor-pointer mt-10" 
       min={3} 
       max={15} 
       value={length}
       onChange={(e) => {setLength(e.target.value)}}/>
-      <label className='ml-1.5'>Length : {length}</label>
+      <label className='ml-1.5 '>Length : {length}</label>
 
       <br />
 
       <h3 className=' text-white font-bold font-serif p-3 text-center rounded-3xl'>Characters used : </h3>
 
+      {/*abc Checkbox*/}
       <input 
       className='ml-4'
       type='checkbox'
@@ -87,42 +101,41 @@ function App() {
       disabled></input>
       <label className='ml-1'>abc</label>
 
-      <input 
-      className='ml-4'
-      type='checkbox'
-      defaultChecked = {numsAllowed}
-      onChange={() => {setNumsAllowed((prev) => !prev)}}></input>
-      <label className='ml-1'>123</label>
+      {/*123 Checkbox*/}
+        <input 
+          className='ml-4'
+          type='checkbox'
+          defaultChecked = {numsAllowed}
+          onChange={() => {setNumsAllowed((prev) => !prev)}}></input>
+        <label className='ml-1'>123</label>
 
-      
+        {/*ABC Checkbox*/}
+        <input 
+          className='ml-4'
+          type='checkbox'
+          defaultChecked = {bigCharAllowed}
+          onChange={() => {setBigCharAllowed((prev) => !prev)}}>
+        </input>
+          <label className='ml-1'>ABC</label>
 
-      <input 
-      className='ml-4'
-      type='checkbox'
-      defaultChecked = {bigCharAllowed}
-      onChange={() => {setBigCharAllowed((prev) => !prev)}}></input>
-      <label className='ml-1'>ABC</label>
+        {/*@#$ Checkbox*/}
+        <input 
+          className='ml-4'
+          type='checkbox'
+          defaultChecked = {spCharAllowed}
+          onChange={() => {setSpCharAllowed((prev) => !prev)}}>
+        </input>
+        <label className='ml-1'>@#$</label>
 
-      <input 
-      className='ml-4'
-      type='checkbox'
-      defaultChecked = {spCharAllowed}
-      onChange={() => {setSpCharAllowed((prev) => !prev)}}></input>
-      <label className='ml-1'>@#$</label>
-      
-      
-    </div>
+      </div>
 
-    <img
+      <img
         src={castleImg}
         alt="Castle"
         className='w-90 rounded-xl mx-auto '
       />
-
-      </div>
-    </>
-
-    
+    </div>
+  </>
   )
 }
 

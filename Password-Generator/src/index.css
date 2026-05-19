@@ -34,7 +34,7 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #141225;
+    --bg: #0c0a1c;
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;
@@ -73,11 +73,11 @@ h2 {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 40px;
   letter-spacing: -1.68px;
   margin: 15px 10px;
   @media (max-width: 1024px) {
-    font-size: 36px;
+    font-size: 32px;
     margin: 15px 10px;
   }
 }
