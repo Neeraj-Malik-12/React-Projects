@@ -1,7 +1,5 @@
 import { useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import InputBox from './components/InputBox'
 import './App.css'
 
 function App() {
@@ -10,6 +8,9 @@ function App() {
   return (
     <>
       <h1 className='text-3xl text-white bg-blue-700' >Currency Convertor</h1>
+      <InputBox label='From'/>
+      <br />
+      <InputBox label = "To"/>
     </>
   )
 }
