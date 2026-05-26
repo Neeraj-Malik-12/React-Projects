@@ -24,9 +24,9 @@ function App() {
 
   return (
     <>
-    <div className='w-2/3 flex flex-col rounded-3xl mx-auto items-center bg-amber-950 
-    '>
-      <h1 className='text-3xl text-white bg-amber-800 p-2 rounded-3xl' >Currency Convertor</h1>
+    <div className="flex justify-center items-center h-screen bg-stone-900">
+    <div className='rounded-3xl mx-auto bg-stone-800 p-2'>
+      <h2 className='text-3xl text-amber-400! bg-stone-700 p-2 rounded-3xl'>Currency Convertor</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -56,11 +56,12 @@ function App() {
       />
 
       <button type='submit'
-      className=' bg-blue-600 text-white px-4 py-3 rounded-lg my-4'>
+      className=' bg-amber-600 text-white px-4 py-3 rounded-lg my-4'>
         Convert {from.toUpperCase()} to {to.toUpperCase()}
       </button>
 
       </form>
+      </div>
       </div>
     </>
   )

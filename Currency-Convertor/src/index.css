@@ -55,8 +55,8 @@ body {
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  /* max-width: 100%; */
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);
@@ -76,10 +76,10 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
+  margin-bottom: 15px;
   @media (max-width: 1024px) {
     font-size: 36px;
-    margin: 20px 0;
+    margin-bottom : 10px;
   }
 }
 h2 {
