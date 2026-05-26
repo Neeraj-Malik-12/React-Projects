@@ -20,8 +20,6 @@ function App() {
     setConvertedAmount(amount*currencyInfo[to])
   }
 
-
-
   return (
     <>
     <div className="flex justify-center items-center h-screen bg-stone-900">
