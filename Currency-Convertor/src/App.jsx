@@ -35,11 +35,18 @@ function App() {
       flow='From' 
       amountLabel="Input Amount :"
       amount={amount}
-      onAmountChange={(amount) => setAmount(amount)}
+      onAmountChange={(amount) => {
+        setAmount(amount) 
+        setConvertedAmount(0)
+      }}
       currencyArray={options}
       selectCurrency={from}
       amountDisabled={false}
-      onCurrencyChange = {(currency) => setFrom(currency)}
+      onCurrencyChange = {
+        (currency) => {setFrom(currency)
+          setConvertedAmount(0)
+        } 
+      }
       />
       <br />
       <InputBox 
@@ -50,7 +57,10 @@ function App() {
       currencyArray={options}
       selectCurrency={to}
       amountDisabled={true}
-      onCurrencyChange = {(currency) => setTo(currency)}
+      onCurrencyChange = {(currency) => {
+        setTo(currency)
+        setConvertedAmount(0)
+      }}
       />
 
       <button type='submit'
