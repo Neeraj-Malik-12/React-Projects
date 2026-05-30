@@ -59,7 +59,9 @@ function App() {
       amountDisabled={true}
       onCurrencyChange = {(currency) => {
         setTo(currency)
-        setConvertedAmount(0)
+        setConvertedAmount(0
+          
+        )
       }}
       />
 
