@@ -63,8 +63,9 @@ function Header() {
               <ul className="flex">
                 <li className="p-2">
                   <NavLink
-                    className={() =>
-                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                  to="/"
+                    className={({isActive}) =>
+                      `pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
                     }
                   >
                     Home
@@ -73,8 +74,9 @@ function Header() {
 
                 <li className="p-2">
                   <NavLink
-                    className={() =>
-                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                  to="about"
+                    className={({isActive}) =>
+                      `pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
                     }
                   >
                     About
@@ -83,8 +85,9 @@ function Header() {
 
                 <li className="p-2">
                   <NavLink
-                    className={() =>
-                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                  to ="contact"
+                    className={({isActive}) =>
+                      `pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
                     }
                   >
                     Contact
@@ -93,8 +96,9 @@ function Header() {
 
                 <li className="p-2">
                   <NavLink
-                    className={() =>
-                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                  to = "github"
+                    className={({isActive}) =>
+                      `pl-3 duration-200 ${isActive? "text-orange-700" : "text-gray-700"} border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
                     }
                   >
                     Github
