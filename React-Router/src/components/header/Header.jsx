@@ -48,35 +48,68 @@ function Header() {
         </nav>
       </header> */}
 
-      <header>
-        <nav>
-          <div className="w-full bg-amber-50 h-15 flex items-center p-2 border-b-4 justify-between">
-            <Link to="/">
-              <img src="src/assets/react.svg" className=""></img>
+      <header className="shadow-2xl sticky z-50 top-0">
+        <nav className="bg-white border-gray-200">
+          <div className="w-full h-15 flex items-center p-2  justify-between">
+            <Link to="/" className="flex items-center">
+              <img
+                src="/src/assets/NM Logo.png"
+                className="h-15 rounded-4xl p-2 "
+                alt="Logo"
+              ></img>
             </Link>
 
-            <div id="middle" className="bg-amber-200 w-auto h-full">
+            <div id="middle" className="w-auto h-full font-bold">
               <ul className="flex">
                 <li className="p-2">
-                  <NavLink>Home</NavLink>
+                  <NavLink
+                    className={() =>
+                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                    }
+                  >
+                    Home
+                  </NavLink>
                 </li>
 
                 <li className="p-2">
-                  <NavLink>About</NavLink>
+                  <NavLink
+                    className={() =>
+                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                    }
+                  >
+                    About
+                  </NavLink>
                 </li>
 
                 <li className="p-2">
-                  <NavLink>Contact</NavLink>
+                  <NavLink
+                    className={() =>
+                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                    }
+                  >
+                    Contact
+                  </NavLink>
                 </li>
 
                 <li className="p-2">
-                  <NavLink>Github</NavLink>
+                  <NavLink
+                    className={() =>
+                      `pl-3 duration-200 border-b border-gray-400 hover:bg-gray-200 hover:text-orange-700 p-2 rounded-2xl`
+                    }
+                  >
+                    Github
+                  </NavLink>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <Link className="bg-amber-900 text-white p-2 rounded-xl font-bold font-">Log In</Link>
+            <div className="flex items-center lg:order-2">
+              <Link
+                to="#"
+                className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              >
+                Log In
+              </Link>
             </div>
           </div>
         </nav>
