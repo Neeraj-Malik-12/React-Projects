@@ -176,7 +176,7 @@ function Footer() {
               <Link>
                 <img
                   src="/src/assets/NM Logo.png"
-                  className="h-15 rounded-4xl p-2 m-2"
+                  className="h-15 rounded-3xl p-2 m-2"
                   alt="Logo"
                 ></img>
               </Link>
