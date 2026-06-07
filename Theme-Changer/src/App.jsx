@@ -4,6 +4,10 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 import { ThemeProvider } from "./context/theme"
+import ThemeBtn from "./components/ThemeBtn";
+import Card from "./components/Card";
+
+
 
 function App() {
 
