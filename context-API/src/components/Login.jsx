@@ -18,7 +18,7 @@ function Login() {
       <div className=" flex flex-col items-center min-h-screen bg-cover bg-no-repeat bg-center"
       style={{backgroundImage : `url(${bgImage})`}}
       >
-        <h2 className=" flex justify-center items-center sticky top-2 bg-white/5 backdrop-blur-md border border-white rounded-xl shadow-2xl p-6 h-15 w-99/100 ">
+        <h2 className=" flex justify-center items-center sticky top-2 bg-white/5 backdrop-blur-xs border border-white rounded-xl shadow-2xl p-6 h-15 w-99/100 ">
           Login Here
         </h2>
 
